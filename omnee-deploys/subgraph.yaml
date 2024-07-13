@@ -8,7 +8,7 @@ dataSources:
     name: UniversalFactory
     network: base-sepolia
     source:
-      address: "0x0d94Ddd6622b75a513a4BD62036B6160A7E89C35"
+      address: "0xF803d75844195266E9a0Db97b17832Bb14F5Ca91"
       abi: UniversalFactory
       startBlock: 12554344
     mapping:
