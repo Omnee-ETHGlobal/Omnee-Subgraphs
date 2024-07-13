@@ -8,16 +8,12 @@
     "type": "constructor"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "target", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "target", "type": "address" }],
     "name": "AddressEmptyCode",
     "type": "error"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "account", "type": "address" }],
     "name": "AddressInsufficientBalance",
     "type": "error"
   },
@@ -31,9 +27,7 @@
     "type": "error"
   },
   {
-    "inputs": [
-      { "internalType": "uint256", "name": "msgValue", "type": "uint256" }
-    ],
+    "inputs": [{ "internalType": "uint256", "name": "msgValue", "type": "uint256" }],
     "name": "NotEnoughNative",
     "type": "error"
   },
@@ -46,23 +40,17 @@
     "type": "error"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "owner", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "owner", "type": "address" }],
     "name": "OwnableInvalidOwner",
     "type": "error"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "account", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "account", "type": "address" }],
     "name": "OwnableUnauthorizedAccount",
     "type": "error"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "token", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "token", "type": "address" }],
     "name": "SafeERC20FailedOperation",
     "type": "error"
   },
@@ -72,31 +60,31 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "",
+        "name": "sender",
         "type": "address"
       },
       {
         "indexed": false,
         "internalType": "string",
-        "name": "",
+        "name": "name",
         "type": "string"
       },
       {
         "indexed": false,
         "internalType": "string",
-        "name": "",
+        "name": "symbol",
         "type": "string"
       },
       {
         "indexed": false,
         "internalType": "uint32[]",
-        "name": "",
+        "name": "eids",
         "type": "uint32[]"
       },
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "",
+        "name": "deployId",
         "type": "uint256"
       }
     ],
@@ -200,9 +188,7 @@
   {
     "inputs": [{ "internalType": "uint32", "name": "eid", "type": "uint32" }],
     "name": "peers",
-    "outputs": [
-      { "internalType": "bytes32", "name": "peer", "type": "bytes32" }
-    ],
+    "outputs": [{ "internalType": "bytes32", "name": "peer", "type": "bytes32" }],
     "stateMutability": "view",
     "type": "function"
   },
@@ -226,18 +212,14 @@
     "type": "function"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "_baseFactory", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "_baseFactory", "type": "address" }],
     "name": "setBaseFactory",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "_delegate", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "_delegate", "type": "address" }],
     "name": "setDelegate",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -266,9 +248,7 @@
     "type": "function"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "newOwner", "type": "address" }
-    ],
+    "inputs": [{ "internalType": "address", "name": "newOwner", "type": "address" }],
     "name": "transferOwnership",
     "outputs": [],
     "stateMutability": "nonpayable",

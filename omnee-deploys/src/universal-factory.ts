@@ -7,15 +7,16 @@ import { OFTCreated, OwnershipTransferred, PeerSet } from "../generated/schema";
 
 export function handleOFTCreated(event: OFTCreatedEvent): void {
   let entity = new OFTCreated(event.transaction.hash.concatI32(event.logIndex.toI32()));
-  entity.param0 = event.params.param0;
-  // entity.param0 = event.address;
-  entity.param1 = event.params.param1;
-  entity.param2 = event.params.param2;
-  entity.param3 = event.params.param3;
-  entity.param4 = event.params.param4;
+  entity.param0 = event.params.sender;
+  entity.param1 = event.params.name;
+  entity.param2 = event.params.symbol;
+  entity.param3 = event.params.eids;
+  entity.param4 = event.params.deployId;
+
   entity.blockNumber = event.block.number;
   entity.blockTimestamp = event.block.timestamp;
   entity.transactionHash = event.transaction.hash;
+
   entity.save();
 }
 
