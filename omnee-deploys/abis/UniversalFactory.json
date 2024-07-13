@@ -39,13 +39,6 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "addr", "type": "address" }
-    ],
-    "name": "OnlyEndpoint",
-    "type": "error"
-  },
-  {
-    "inputs": [
       { "internalType": "uint32", "name": "eid", "type": "uint32" },
       { "internalType": "bytes32", "name": "sender", "type": "bytes32" }
     ],
@@ -72,6 +65,43 @@
     ],
     "name": "SafeERC20FailedOperation",
     "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32[]",
+        "name": "",
+        "type": "uint32[]"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "OFTCreated",
+    "type": "event"
   },
   {
     "anonymous": false,
@@ -112,101 +142,22 @@
     "type": "event"
   },
   {
-    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "name": "OFTAddressById",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [],
-    "name": "SEP_EID",
-    "outputs": [{ "internalType": "uint32", "name": "", "type": "uint32" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "components": [
-          { "internalType": "uint32", "name": "srcEid", "type": "uint32" },
-          { "internalType": "bytes32", "name": "sender", "type": "bytes32" },
-          { "internalType": "uint64", "name": "nonce", "type": "uint64" }
-        ],
-        "internalType": "struct Origin",
-        "name": "origin",
-        "type": "tuple"
-      }
-    ],
-    "name": "allowInitializePath",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "baseFactory",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "currentId",
+    "name": "currentDeployId",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      {
-        "components": [
-          { "internalType": "string", "name": "ticker", "type": "string" },
-          { "internalType": "string", "name": "name", "type": "string" }
-        ],
-        "internalType": "struct UniversalFactory.DeployParams",
-        "name": "deployParams",
-        "type": "tuple"
-      },
+      { "internalType": "string", "name": "_name", "type": "string" },
+      { "internalType": "string", "name": "_symbol", "type": "string" },
+      { "internalType": "uint32[]", "name": "_eids", "type": "uint32[]" },
       { "internalType": "bytes", "name": "_options", "type": "bytes" }
     ],
-    "name": "deploy",
-    "outputs": [
-      {
-        "components": [
-          { "internalType": "bytes32", "name": "guid", "type": "bytes32" },
-          { "internalType": "uint64", "name": "nonce", "type": "uint64" },
-          {
-            "components": [
-              {
-                "internalType": "uint256",
-                "name": "nativeFee",
-                "type": "uint256"
-              },
-              {
-                "internalType": "uint256",
-                "name": "lzTokenFee",
-                "type": "uint256"
-              }
-            ],
-            "internalType": "struct MessagingFee",
-            "name": "fee",
-            "type": "tuple"
-          }
-        ],
-        "internalType": "struct MessagingReceipt",
-        "name": "receipt",
-        "type": "tuple"
-      }
-    ],
+    "name": "deployOFT",
+    "outputs": [],
     "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "name": "distEIDs",
-    "outputs": [{ "internalType": "uint32", "name": "", "type": "uint32" }],
-    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -223,67 +174,13 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "components": [
-          { "internalType": "uint32", "name": "srcEid", "type": "uint32" },
-          { "internalType": "bytes32", "name": "sender", "type": "bytes32" },
-          { "internalType": "uint64", "name": "nonce", "type": "uint64" }
-        ],
-        "internalType": "struct Origin",
-        "name": "",
-        "type": "tuple"
-      },
-      { "internalType": "bytes", "name": "", "type": "bytes" },
-      { "internalType": "address", "name": "_sender", "type": "address" }
-    ],
-    "name": "isComposeMsgSender",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "components": [
-          { "internalType": "uint32", "name": "srcEid", "type": "uint32" },
-          { "internalType": "bytes32", "name": "sender", "type": "bytes32" },
-          { "internalType": "uint64", "name": "nonce", "type": "uint64" }
-        ],
-        "internalType": "struct Origin",
-        "name": "_origin",
-        "type": "tuple"
-      },
-      { "internalType": "bytes32", "name": "_guid", "type": "bytes32" },
-      { "internalType": "bytes", "name": "_message", "type": "bytes" },
-      { "internalType": "address", "name": "_executor", "type": "address" },
-      { "internalType": "bytes", "name": "_extraData", "type": "bytes" }
-    ],
-    "name": "lzReceive",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "uint32", "name": "", "type": "uint32" },
-      { "internalType": "bytes32", "name": "", "type": "bytes32" }
-    ],
-    "name": "nextNonce",
-    "outputs": [
-      { "internalType": "uint64", "name": "nonce", "type": "uint64" }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "oAppVersion",
     "outputs": [
       { "internalType": "uint64", "name": "senderVersion", "type": "uint64" },
       { "internalType": "uint64", "name": "receiverVersion", "type": "uint64" }
     ],
-    "stateMutability": "pure",
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -304,18 +201,12 @@
   },
   {
     "inputs": [
-      {
-        "components": [
-          { "internalType": "string", "name": "ticker", "type": "string" },
-          { "internalType": "string", "name": "name", "type": "string" }
-        ],
-        "internalType": "struct UniversalFactory.DeployParams",
-        "name": "deployParams",
-        "type": "tuple"
-      },
+      { "internalType": "string", "name": "_name", "type": "string" },
+      { "internalType": "string", "name": "_symbol", "type": "string" },
+      { "internalType": "uint32[]", "name": "_eids", "type": "uint32[]" },
       { "internalType": "bytes", "name": "_options", "type": "bytes" }
     ],
-    "name": "quote",
+    "name": "quoteDeployOFT",
     "outputs": [
       { "internalType": "uint256", "name": "nativeFee", "type": "uint256" }
     ],
@@ -325,26 +216,6 @@
   {
     "inputs": [],
     "name": "renounceOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "uint32", "name": "_dstEid", "type": "uint32" },
-      { "internalType": "string", "name": "_message", "type": "string" },
-      { "internalType": "bytes", "name": "_options", "type": "bytes" }
-    ],
-    "name": "send",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "address", "name": "_baseFactory", "type": "address" }
-    ],
-    "name": "setBaseFactory",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -366,6 +237,18 @@
     "name": "setPeer",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "name": "tokenByAddress",
+    "outputs": [
+      { "internalType": "address", "name": "deployer", "type": "address" },
+      { "internalType": "string", "name": "name", "type": "string" },
+      { "internalType": "string", "name": "symbol", "type": "string" },
+      { "internalType": "uint256", "name": "deployId", "type": "uint256" }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {

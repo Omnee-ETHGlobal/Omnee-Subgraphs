@@ -1,8 +1,0 @@
-{
-  "base-sepolia": {
-    "UniversalFactory": {
-      "address": "0xfB9cDefA6Db1990dbC01225311f4f8A980EbDCEB",
-      "startBlock": 12532750
-    }
-  }
-}

@@ -8,7 +8,7 @@ dataSources:
     name: UniversalFactory
     network: base-sepolia
     source:
-      address: "0xfb9cdefa6db1990dbc01225311f4f8a980ebdceb"
+      address: "0xfB9cDefA6Db1990dbC01225311f4f8A980EbDCEB"
       abi: UniversalFactory
       startBlock: 12532750
     mapping:
@@ -16,12 +16,15 @@ dataSources:
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
+        - OFTCreated
         - OwnershipTransferred
         - PeerSet
       abis:
         - name: UniversalFactory
           file: ./abis/UniversalFactory.json
       eventHandlers:
+        - event: OFTCreated(address,string,string,uint32[],uint256)
+          handler: handleOFTCreated
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
         - event: PeerSet(uint32,bytes32)
