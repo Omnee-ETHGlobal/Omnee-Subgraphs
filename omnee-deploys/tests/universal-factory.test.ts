@@ -17,19 +17,19 @@ import { createOFTCreatedEvent } from "./universal-factory-utils"
 
 describe("Describe entity assertions", () => {
   beforeAll(() => {
-    let param0 = Address.fromString(
+    let tokenAddress = Address.fromString(
       "0x0000000000000000000000000000000000000001"
     )
-    let param1 = "Example string value"
-    let param2 = "Example string value"
-    let param3 = [BigInt.fromI32(234)]
-    let param4 = BigInt.fromI32(234)
+    let name = "Example string value"
+    let symbol = "Example string value"
+    let eids = [BigInt.fromI32(234)]
+    let deployId = BigInt.fromI32(234)
     let newOFTCreatedEvent = createOFTCreatedEvent(
-      param0,
-      param1,
-      param2,
-      param3,
-      param4
+      tokenAddress,
+      name,
+      symbol,
+      eids,
+      deployId
     )
     handleOFTCreated(newOFTCreatedEvent)
   })
@@ -48,31 +48,31 @@ describe("Describe entity assertions", () => {
     assert.fieldEquals(
       "OFTCreated",
       "0xa16081f360e3847006db660bae1c6d1b2e17ec2a-1",
-      "param0",
+      "tokenAddress",
       "0x0000000000000000000000000000000000000001"
     )
     assert.fieldEquals(
       "OFTCreated",
       "0xa16081f360e3847006db660bae1c6d1b2e17ec2a-1",
-      "param1",
+      "name",
       "Example string value"
     )
     assert.fieldEquals(
       "OFTCreated",
       "0xa16081f360e3847006db660bae1c6d1b2e17ec2a-1",
-      "param2",
+      "symbol",
       "Example string value"
     )
     assert.fieldEquals(
       "OFTCreated",
       "0xa16081f360e3847006db660bae1c6d1b2e17ec2a-1",
-      "param3",
+      "eids",
       "[234]"
     )
     assert.fieldEquals(
       "OFTCreated",
       "0xa16081f360e3847006db660bae1c6d1b2e17ec2a-1",
-      "param4",
+      "deployId",
       "234"
     )
 

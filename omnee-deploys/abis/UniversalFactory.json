@@ -8,12 +8,16 @@
     "type": "constructor"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "target", "type": "address" }],
+    "inputs": [
+      { "internalType": "address", "name": "target", "type": "address" }
+    ],
     "name": "AddressEmptyCode",
     "type": "error"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "account", "type": "address" }],
+    "inputs": [
+      { "internalType": "address", "name": "account", "type": "address" }
+    ],
     "name": "AddressInsufficientBalance",
     "type": "error"
   },
@@ -27,7 +31,9 @@
     "type": "error"
   },
   {
-    "inputs": [{ "internalType": "uint256", "name": "msgValue", "type": "uint256" }],
+    "inputs": [
+      { "internalType": "uint256", "name": "msgValue", "type": "uint256" }
+    ],
     "name": "NotEnoughNative",
     "type": "error"
   },
@@ -40,17 +46,23 @@
     "type": "error"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "owner", "type": "address" }],
+    "inputs": [
+      { "internalType": "address", "name": "owner", "type": "address" }
+    ],
     "name": "OwnableInvalidOwner",
     "type": "error"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "account", "type": "address" }],
+    "inputs": [
+      { "internalType": "address", "name": "account", "type": "address" }
+    ],
     "name": "OwnableUnauthorizedAccount",
     "type": "error"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "token", "type": "address" }],
+    "inputs": [
+      { "internalType": "address", "name": "token", "type": "address" }
+    ],
     "name": "SafeERC20FailedOperation",
     "type": "error"
   },
@@ -60,7 +72,7 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "sender",
+        "name": "tokenAddress",
         "type": "address"
       },
       {
@@ -138,6 +150,13 @@
   },
   {
     "inputs": [],
+    "name": "bondingCurve",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "currentDeployId",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
@@ -169,6 +188,15 @@
     "type": "function"
   },
   {
+    "inputs": [
+      { "internalType": "uint256", "name": "_deployId", "type": "uint256" }
+    ],
+    "name": "getTokensAddressByDeployId",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "oAppVersion",
     "outputs": [
@@ -188,7 +216,9 @@
   {
     "inputs": [{ "internalType": "uint32", "name": "eid", "type": "uint32" }],
     "name": "peers",
-    "outputs": [{ "internalType": "bytes32", "name": "peer", "type": "bytes32" }],
+    "outputs": [
+      { "internalType": "bytes32", "name": "peer", "type": "bytes32" }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -212,14 +242,27 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "_baseFactory", "type": "address" }],
+    "inputs": [
+      { "internalType": "address", "name": "_baseFactory", "type": "address" }
+    ],
     "name": "setBaseFactory",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "_delegate", "type": "address" }],
+    "inputs": [
+      { "internalType": "address", "name": "_bondingCurve", "type": "address" }
+    ],
+    "name": "setBondingCurve",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_delegate", "type": "address" }
+    ],
     "name": "setDelegate",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -236,19 +279,21 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
-    "name": "tokenByAddress",
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "tokenByDeployId",
     "outputs": [
+      { "internalType": "address", "name": "tokenAddr", "type": "address" },
       { "internalType": "address", "name": "deployer", "type": "address" },
       { "internalType": "string", "name": "name", "type": "string" },
-      { "internalType": "string", "name": "symbol", "type": "string" },
-      { "internalType": "uint256", "name": "deployId", "type": "uint256" }
+      { "internalType": "string", "name": "symbol", "type": "string" }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "newOwner", "type": "address" }],
+    "inputs": [
+      { "internalType": "address", "name": "newOwner", "type": "address" }
+    ],
     "name": "transferOwnership",
     "outputs": [],
     "stateMutability": "nonpayable",

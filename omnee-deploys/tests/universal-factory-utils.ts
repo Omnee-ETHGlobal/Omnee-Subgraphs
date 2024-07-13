@@ -7,33 +7,39 @@ import {
 } from "../generated/UniversalFactory/UniversalFactory"
 
 export function createOFTCreatedEvent(
-  param0: Address,
-  param1: string,
-  param2: string,
-  param3: Array<BigInt>,
-  param4: BigInt
+  tokenAddress: Address,
+  name: string,
+  symbol: string,
+  eids: Array<BigInt>,
+  deployId: BigInt
 ): OFTCreated {
   let oftCreatedEvent = changetype<OFTCreated>(newMockEvent())
 
   oftCreatedEvent.parameters = new Array()
 
   oftCreatedEvent.parameters.push(
-    new ethereum.EventParam("param0", ethereum.Value.fromAddress(param0))
-  )
-  oftCreatedEvent.parameters.push(
-    new ethereum.EventParam("param1", ethereum.Value.fromString(param1))
-  )
-  oftCreatedEvent.parameters.push(
-    new ethereum.EventParam("param2", ethereum.Value.fromString(param2))
-  )
-  oftCreatedEvent.parameters.push(
     new ethereum.EventParam(
-      "param3",
-      ethereum.Value.fromUnsignedBigIntArray(param3)
+      "tokenAddress",
+      ethereum.Value.fromAddress(tokenAddress)
     )
   )
   oftCreatedEvent.parameters.push(
-    new ethereum.EventParam("param4", ethereum.Value.fromUnsignedBigInt(param4))
+    new ethereum.EventParam("name", ethereum.Value.fromString(name))
+  )
+  oftCreatedEvent.parameters.push(
+    new ethereum.EventParam("symbol", ethereum.Value.fromString(symbol))
+  )
+  oftCreatedEvent.parameters.push(
+    new ethereum.EventParam(
+      "eids",
+      ethereum.Value.fromUnsignedBigIntArray(eids)
+    )
+  )
+  oftCreatedEvent.parameters.push(
+    new ethereum.EventParam(
+      "deployId",
+      ethereum.Value.fromUnsignedBigInt(deployId)
+    )
   )
 
   return oftCreatedEvent
