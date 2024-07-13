@@ -143,6 +143,13 @@
   },
   {
     "inputs": [],
+    "name": "baseFactory",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "currentDeployId",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
@@ -207,15 +214,22 @@
       { "internalType": "bytes", "name": "_options", "type": "bytes" }
     ],
     "name": "quoteDeployOFT",
-    "outputs": [
-      { "internalType": "uint256", "name": "nativeFee", "type": "uint256" }
-    ],
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_baseFactory", "type": "address" }
+    ],
+    "name": "setBaseFactory",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
