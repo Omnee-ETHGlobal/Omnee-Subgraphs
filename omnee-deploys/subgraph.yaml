@@ -8,9 +8,9 @@ dataSources:
     name: UniversalFactory
     network: base-sepolia
     source:
-      address: "0xE54F28e6cC35b5D3d8697B2ccf0510157586fa6F"
+      address: "0xf46ac01917B5CbE6125aF8EA2aC9E85de0e365aA"
       abi: UniversalFactory
-      startBlock: 12573012
+      startBlock: 12581662
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7

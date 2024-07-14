@@ -188,15 +188,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      { "internalType": "uint256", "name": "_deployId", "type": "uint256" }
-    ],
-    "name": "getTokensAddressByDeployId",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "oAppVersion",
     "outputs": [
@@ -279,10 +270,10 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "name": "tokenByDeployId",
+    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "name": "tokenByAddress",
     "outputs": [
-      { "internalType": "address", "name": "tokenAddr", "type": "address" },
+      { "internalType": "uint256", "name": "deployId", "type": "uint256" },
       { "internalType": "address", "name": "deployer", "type": "address" },
       { "internalType": "string", "name": "name", "type": "string" },
       { "internalType": "string", "name": "symbol", "type": "string" }
